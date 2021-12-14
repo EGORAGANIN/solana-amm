@@ -1,0 +1,27 @@
+[package]
+name = "amm"
+version = "0.1.0"
+authors = ["Aganin E.V <aganin.ev@gmail.com>"]
+edition = "2018"
+
+[features]
+no-entrypoint = []
+test-bpf = []
+
+[dependencies]
+solana-program = "1.8.3"
+borsh = "0.9.1"
+thiserror = "1.0.30"
+spl-token = { version = "3.2.0", features = ["no-entrypoint"]}
+spl-associated-token-account = { version = "1.0.3", features = ["no-entrypoint"]}
+num-traits = "0.2.14"
+num-derive = "0.3.3"
+spl-math = { version = "0.1.0", features = ["no-entrypoint"]}
+
+[dev-dependencies]
+solana-program-test = "1.8.3"
+solana-sdk = "1.8.3"
+tokio = { version = "1.14.0", features = ["full"] }
+
+[lib]
+crate-type = ["cdylib", "lib"]
